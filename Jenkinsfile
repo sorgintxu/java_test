@@ -5,9 +5,8 @@ pipeline {
       parallel {
         stage('test') {
           steps {
-            sh 'ls'
-            git(url: 'https://github.com/sorgintxu/java_test.git', branch: 'main')
-            echo 'phase de test'
+            sh 'touch bonjour'
+            echo 'hello phase de test'
             sh 'mvn clean test'
           }
         }
