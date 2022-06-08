@@ -13,6 +13,8 @@ pipeline {
 
         stage('build') {
           steps {
+            sh 'mkdir sparkjava'
+            dir(path: 'sparkjava/')
             git(url: 'https://github.com/kliakos/sparkjava-war-example.git', branch: 'master')
             sh 'mvn clean install'
             archiveArtifacts 'target/*.war'
