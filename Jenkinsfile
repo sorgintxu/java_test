@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'hello phase de test'
         sh 'mvn clean test'
-        junit '/target/surefire-reports/*.xml'
+        junit 'target/surefire-reports/*.xml'
         cleanWs(cleanWhenSuccess: true, deleteDirs: true)
       }
     }
